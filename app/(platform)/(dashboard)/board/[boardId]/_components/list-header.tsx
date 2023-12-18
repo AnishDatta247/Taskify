@@ -99,7 +99,7 @@ export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
           onClick={enableEditing}
           className="flex items-center mt-0.5 w-full text-base px-2.5 py-1 h-7 font-semibold border-transparent"
         >
-          <span>{title}</span>
+          <span className="truncate max-w-[170px]">{title}</span>
           <Badge className="bg-neutral-300 w-4 h-4 p-0 ml-2 mt-0.5 hover:bg-neutral-300">
             <span className="font-normal text-[10px] text-neutral-700 w-full text-center">
               {data.cards.length}

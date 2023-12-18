@@ -7,6 +7,9 @@ export async function GET(
   request: Request,
   { params }: { params: { cardId: string } }
 ) {
+  const url = new URL(request.url);
+  const take = url.searchParams.get("take");
+
   try {
     const { userId, orgId } = auth();
 
@@ -21,7 +24,7 @@ export async function GET(
         entityType: ENTITY_TYPE.CARD,
       },
       orderBy: { createdAt: "desc" },
-      take: 3,
+      take: take ? parseInt(take, 10) : undefined,
     });
 
     return NextResponse.json(auditLogs);

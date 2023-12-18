@@ -4,6 +4,7 @@ import { Badge } from "@/components/modals/card-modal/badge";
 import { useCardModal } from "@/hooks/use-card-modal";
 import { Draggable } from "@hello-pangea/dnd";
 import { CATEGORY, Card } from "@prisma/client";
+import { CardUsers } from "./card-users";
 
 interface CardItemProps {
   data: Card;
@@ -25,7 +26,7 @@ export const CardItem = ({ data, index }: CardItemProps) => {
           className="mb-2 border-2 border-transparent hover:border-black py-2 px-3 text-sm bg-white rounded-md shadow-sm"
         >
           <div className="flex">
-            <span className="text-base font-medium">{data.title}</span>
+            <span className="text-base font-medium truncate">{data.title}</span>
             {data.category !== CATEGORY.NONE && (
               <Badge
                 category={data.category}
@@ -34,8 +35,9 @@ export const CardItem = ({ data, index }: CardItemProps) => {
             )}
           </div>
           {data.description && (
-            <p className="mt-1 text-xs text-neutral-500">{data.description}</p>
+            <p className="mt-2 text-xs text-neutral-500">{data.description}</p>
           )}
+          <CardUsers id={data.id} />
         </div>
       )}
     </Draggable>

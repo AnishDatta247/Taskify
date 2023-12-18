@@ -70,6 +70,15 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       entityId: list.id,
       action: ACTION.CREATE,
     });
+
+    list.cards.map(async (card) => {
+      await createAuditLog({
+        entityTitle: card.title,
+        entityType: ENTITY_TYPE.CARD,
+        entityId: card.id,
+        action: ACTION.CREATE,
+      });
+    });
   } catch (error) {
     return {
       error: "Failed to copy",
