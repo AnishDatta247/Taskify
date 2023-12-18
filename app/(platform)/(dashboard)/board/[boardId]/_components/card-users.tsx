@@ -33,7 +33,7 @@ export const CardUsers = ({ id }: CardUsersProps) => {
     <div className="flex -space-x-2 mt-2">
       {users ? (
         images.map((img) => (
-          <div className="w-6 h-6 relative border-white border-2 rounded-full">
+          <div key={img} className="w-6 h-6 relative border-white border-2 rounded-full">
             <Image src={img} alt="avatar" fill className="rounded-full" />
           </div>
         ))
