@@ -15,24 +15,19 @@ export const CardUsers = ({ id }: CardUsersProps) => {
 
   const queryClient = useQueryClient();
 
-  try {
-    const { data: auditLogsData } = useQuery<AuditLog[]>({
-      queryKey: ["card-logs", id],
-      queryFn: () => fetcher(`/api/cards/${id}/logs`),
-    });
-    users = auditLogsData;
-  } catch (error: any) {
-    toast.error(error);
-  } finally {
-    images = users?.map((user) => user.userImage);
+  const { data: auditLogsData } = useQuery<AuditLog[]>({
+    queryKey: ["card-logs", id],
+    queryFn: () => fetcher(`/api/cards/${id}/logs`),
+  });
+  users = auditLogsData;
+  images = users?.map((user) => user.userImage);
 
-    const uniqueList = new Set(images);
-    images = Array.from(uniqueList);
+  const uniqueList = new Set(images);
+  images = Array.from(uniqueList);
 
-    queryClient.invalidateQueries({
-      queryKey: ["card-logs", id],
-    });
-  }
+  queryClient.invalidateQueries({
+    queryKey: ["card-logs", id],
+  });
 
   return (
     <div className="flex -space-x-2 mt-2">
