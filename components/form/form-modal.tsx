@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverClose,
-} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 import { createBoard } from "@/actions/create-board";
@@ -18,20 +12,18 @@ import { toast } from "sonner";
 import { FormPicker } from "./form-picker";
 import { useRouter } from "next/navigation";
 import { useProModal } from "@/hooks/use-pro-modal";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "../ui/dialog";
 
-interface FormPopoverProps {
+interface FormModalProps {
   children: React.ReactNode;
-  side?: "left" | "right" | "top" | "bottom";
-  align?: "start" | "center" | "end";
-  sideOffset?: number;
 }
 
-export const FormPopover = ({
-  children,
-  side = "bottom",
-  align,
-  sideOffset = 0,
-}: FormPopoverProps) => {
+export const FormModal = ({ children }: FormModalProps) => {
   const closeRef = useRef<ElementRef<"button">>(null);
   const router = useRouter();
   const proModal = useProModal();
@@ -58,25 +50,20 @@ export const FormPopover = ({
   };
 
   return (
-    <Popover>
-      <PopoverTrigger asChild>{children}</PopoverTrigger>
-      <PopoverContent
-        align={align}
-        className="w-80 pt-3"
-        side={side}
-        sideOffset={sideOffset}
-      >
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent className="w-80 pt-3">
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
           Create Board
         </div>
-        <PopoverClose asChild ref={closeRef}>
+        <DialogClose asChild ref={closeRef}>
           <Button
             variant="ghost"
             className="h-auto w-auto p-2 absolute top-2 right-2"
           >
             <X className="h-4 w-4" />
           </Button>
-        </PopoverClose>
+        </DialogClose>
         <form action={onSubmit} className="space-y-4">
           <div className="space-y-4">
             <FormPicker id="image" errors={fieldErrors} />
@@ -89,7 +76,7 @@ export const FormPopover = ({
           </div>
           <FormSubmit className="w-full">Create</FormSubmit>
         </form>
-      </PopoverContent>
-    </Popover>
+      </DialogContent>
+    </Dialog>
   );
 };

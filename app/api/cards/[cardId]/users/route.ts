@@ -22,7 +22,6 @@ export async function GET(
         entityType: ENTITY_TYPE.CARD,
       },
       orderBy: { createdAt: "desc" },
-      take: 3,
     });
 
     return NextResponse.json(auditLogs);

@@ -31,6 +31,10 @@ export const Category = ({ data }: CategoryProps) => {
       queryClient.invalidateQueries({
         queryKey: ["card", data.id],
       });
+      
+      queryClient.invalidateQueries({
+        queryKey: ["card-users", data.id],
+      });
 
       queryClient.invalidateQueries({
         queryKey: ["card-logs", data.id],

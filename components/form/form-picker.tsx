@@ -104,7 +104,7 @@ export const FormPicker = ({ id, errors }: FormPickerProps) => {
                 <Check className="h-4 w-4 text-white font-medium" />
               </div>
             )}
-            <div className="transition cursor-pointer rounded-b-sm opacity-0 group-hover:opacity-100 absolute bottom-0 w-full text-[10px] truncate text-white hover:underline p-1 bg-black/50 ">
+            <div className="transition cursor-pointer rounded-b-sm opacity-0 group-hover:opacity-100 absolute bottom-0 w-full text-[10px] truncate text-white hover:underline py-0.5 px-1 bg-black/50 ">
               <Link href={image.links.html} target="_blank">
                 {image.user.name}
               </Link>

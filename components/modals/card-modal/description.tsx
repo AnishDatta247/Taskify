@@ -55,6 +55,10 @@ export const Description = ({ data }: DescriptionProps) => {
       });
       
       queryClient.invalidateQueries({
+        queryKey: ["card-users", data.id],
+      });
+      
+      queryClient.invalidateQueries({
         queryKey: ["card-logs", data.id],
       });
 

@@ -1,4 +1,4 @@
-import { FormPopover } from "@/components/form/form-popover";
+import { FormModal } from "@/components/form/form-modal";
 import { Hint } from "@/components/hint";
 import { Skeleton } from "@/components/ui/skeleton";
 import { MAX_FREE_BOARDS } from "@/constants/boards";
@@ -49,7 +49,7 @@ export const BoardList = async () => {
             </div>
           </Link>
         ))}
-        <FormPopover sideOffset={10} side="right">
+        <FormModal>
           <div
             role="button"
             className="aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"
@@ -67,7 +67,7 @@ export const BoardList = async () => {
               <HelpCircle className="absolute bottom-2 right-2 h-[14px] w-[14px]" />
             </Hint>
           </div>
-        </FormPopover>
+        </FormModal>
       </div>
     </div>
   );
