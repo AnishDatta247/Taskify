@@ -11,12 +11,12 @@ const headingFont = localFont({
 export const Logo = () => {
   return (
     <Link href="/">
-      <div className="hover_opacity-75 transition image-center gap-x-2 hidden md:flex items-center">
+      <div className="hover:opacity-75 transition image-center gap-x-2 hidden md:flex items-center">
         <div>
           <Image src="/logo.svg" alt="Logo" height={30} width={30} />
         </div>
         <p
-          className={cn("text-lg text-neutral-700 pt-1", headingFont.className)}
+          className={cn("text-lg text-neutral-700 dark:text-neutral-50 pt-1", headingFont.className)}
         >
           Taskify
         </p>

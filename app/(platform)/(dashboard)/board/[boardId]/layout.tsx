@@ -58,7 +58,7 @@ const BoardIdLayout = async ({
       style={{ backgroundImage: `url(${board.imageFullUrl})` }}
     >
       <BoardNavbar data={board} />
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/20 dark:bg-black/30" />
       <main className="relative pt-28 h-full">{children}</main>
     </div>
   );

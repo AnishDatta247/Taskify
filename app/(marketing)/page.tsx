@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { TypingAnimation } from "./_components/typing-animation";
 
 const headingFont = localFont({
   src: "../../public/fonts/font.woff2",
@@ -15,8 +16,10 @@ const textFont = Poppins({
 });
 
 const MarketingPage = () => {
+
   return (
     <div className="flex flex-col items-center justify-center">
+
       <div
         className={cn(
           "flex flex-col items-center justify-center",
@@ -27,11 +30,12 @@ const MarketingPage = () => {
           <Medal className="h-6 w-6 mr-2" />
           No 1 Task Management
         </div>
-        <h1 className="text-3xl md-text-6xl text-center text-neutral-800 mb-4">
+        <h1 className="text-3xl md-text-6xl text-center text-neutral-800 dark:text-neutral-50 mb-4">
           Taskify helps teams move
         </h1>
-        <div className="text-3xl md-text-6xl text-center text-white bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-lg">
-          work forward.
+        <div className="w-200px text-3xl md-text-6xl text-center text-white bg-gradient-to-r from-purple-600 to-pink-600 px-4 pb-2 pt-2.5 rounded-lg">
+          {/* work forward. */}
+          <TypingAnimation />
         </div>
       </div>
       <div

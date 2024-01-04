@@ -61,9 +61,9 @@ export const Category = ({ data }: CategoryProps) => {
 
   return (
     <div className="flex items-start gap-x-3 w-full">
-      <CircleDot className="h-5 w-5 mt-0.5 text-neutral-700" />
+      <CircleDot className="h-5 w-5 mt-0.5 text-neutral-700 dark:text-neutral-50" />
       <div className="w-full">
-        <p className="font-semibold text-neutral-700 mb-2">Category</p>
+        <p className="font-semibold text-neutral-700 dark:text-neutral-50 mb-2">Category</p>
         <div className="flex w-full font-semibold gap-3">
           <button
             className={
@@ -116,14 +116,14 @@ export const Category = ({ data }: CategoryProps) => {
 Category.Skeleton = function CategorySkeleton() {
   return (
     <div className="flex items-start gap-x-3 w-full">
-      <Skeleton className="h-6 w-6 bg-neutral-200" />
+      <Skeleton className="h-6 w-6 bg-neutral-200 dark:bg-neutral-800" />
       <div className="w-full">
-        <Skeleton className="w-20 h-6 mb-2 bg-neutral-200" />
+        <Skeleton className="w-20 h-6 mb-2 bg-neutral-200 dark:bg-neutral-800" />
         <div className="flex gap-3">
-          <Skeleton className="w-10 h-6 bg-neutral-200" />
-          <Skeleton className="w-10 h-6 bg-neutral-200" />
-          <Skeleton className="w-10 h-6 bg-neutral-200" />
-          <Skeleton className="w-10 h-6 bg-neutral-200" />
+          <Skeleton className="w-10 h-6 bg-neutral-200 dark:bg-neutral-800" />
+          <Skeleton className="w-10 h-6 bg-neutral-200 dark:bg-neutral-800" />
+          <Skeleton className="w-10 h-6 bg-neutral-200 dark:bg-neutral-800" />
+          <Skeleton className="w-10 h-6 bg-neutral-200 dark:bg-neutral-800" />
         </div>
       </div>
     </div>

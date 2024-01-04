@@ -66,7 +66,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
         <form
           action={onSubmit}
           ref={formRef}
-          className="mx-1 px-1 space-y-2 pb-1.5"
+          className="mx-1 px-1 space-y-2 pb-2"
         >
           <FormTextarea
             id="title"
@@ -78,7 +78,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
           <div className="flex items-center gap-x-1">
             <FormSubmit>Add card</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5 " />
             </Button>
           </div>
           <FormErrors id="title" errors={fieldErrors} />

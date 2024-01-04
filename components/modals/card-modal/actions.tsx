@@ -70,7 +70,7 @@ export const Actions = ({ data }: ActionProps) => {
         onClick={onCopy}
         disabled={isLoadingCopy}
         variant="gray"
-        className="w-full justify-start"
+        className="w-full justify-start dark:bg-neutral-900"
         size="inline"
       >
         <Copy className="w-4 h-4 mr-2" />
@@ -80,7 +80,7 @@ export const Actions = ({ data }: ActionProps) => {
         onClick={onDelete}
         disabled={isLoadingDelete}
         variant="gray"
-        className="w-full justify-start"
+        className="w-full justify-start dark:bg-neutral-900"
         size="inline"
       >
         <Trash className="w-4 h-4 mr-2" />
@@ -93,9 +93,9 @@ export const Actions = ({ data }: ActionProps) => {
 Actions.Skeleton = function ActionsSkeleton() {
   return (
     <div className="space-y-2 mt-2">
-      <Skeleton className="w-20 h-4 bg-neutral-200" />
-      <Skeleton className="w-full h-8 bg-neutral-200" />
-      <Skeleton className="w-full h-8 bg-neutral-200" />
+      <Skeleton className="w-20 h-4 bg-neutral-200 dark:bg-neutral-800" />
+      <Skeleton className="w-full h-8 bg-neutral-200 dark:bg-neutral-800" />
+      <Skeleton className="w-full h-8 bg-neutral-200 dark:bg-neutral-800" />
     </div>
   );
 };

@@ -23,7 +23,7 @@ export const CardItem = ({ data, index }: CardItemProps) => {
           ref={provided.innerRef}
           role="button"
           onClick={() => cardModal.onOpen(data.id)}
-          className="mb-2 border-2 border-transparent hover:border-black py-2 px-3 text-sm bg-white rounded-md shadow-sm"
+          className="mb-2 border-2 border-transparent hover:border-black py-2 px-3 text-sm bg-white dark:bg-neutral-950 rounded-md shadow-sm"
         >
           <div className="flex">
             <span className="text-base font-medium truncate">{data.title}</span>

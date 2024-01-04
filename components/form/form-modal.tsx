@@ -53,7 +53,7 @@ export const FormModal = ({ children }: FormModalProps) => {
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="w-80 pt-3">
-        <div className="text-sm font-medium text-center text-neutral-600 pb-4">
+        <div className="text-sm font-medium text-center text-neutral-600 dark:text-neutral-50 pb-4">
           Create Board
         </div>
         <DialogClose asChild ref={closeRef}>
